@@ -94,6 +94,12 @@
                         </tr>        
                     </tbody>
                 </table>
+
+
+                <!-- 分页功能  3.x的版本需要准备ul -->
+                <div class="text-right">
+                    <ul id="paginator"></ul>
+                </div>
             </div>
 
 
@@ -123,7 +129,32 @@
         </div>
     </div>
 
+    <!-- 准备模板 -->
+    <script type="text/template" id="tmp">
+       {{each rows v i }}
+        <tr>
+            <td>{{ i + 1 + (page-1) * size }}</td>
+            <td>{{ v.username }}</td>
+            <td>{{ v.mobile }}</td>
+            <!-- isDelete 用来标记当前用户的状态
+                如果为1 ,已启用
+                如果为0 ,已禁用
+            -->
+            <td>{{ v.isDelete === 1 ? "正常" : "已禁用" }}</td>
+            
+            
+            <td>
+                {{ if v.isDelete === 1 }}
+                <button class="btn btn-danger">禁用</button>
+                {{ /if }}
 
+                {{ if v.isDelete === 0 }}
+                <button class="btn btn-success">启用</button>
+                {{ /if }}
+            </td>
+        </tr>  
+        {{/each}}      
+    </script>
 
 
 
@@ -131,8 +162,11 @@
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/checkLogin.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/user.js"></script>
     
 </body>
 </html>
