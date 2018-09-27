@@ -14,6 +14,9 @@ ul {
     padding: 0;
     margin: 0;
 }
+.red {
+    color: #A94442;
+}
 
 /* 后台管理系统头部样式 */
 .panel .panel-title {
@@ -37,6 +40,10 @@ ul {
     height: 100%;
     background-color: #222D32;
     z-index: 999;
+    transition: all 1s;
+}
+.lt_aside.hidemenu {
+    left: -180px;
 }
 .lt_aside .brand {
     width: 180px;
@@ -95,6 +102,10 @@ ul {
     padding-top: 50px;
     height: 1000px;
     background-color: pink;
+    transition: all 1s;
+}
+.lt_main.hidemenu {
+    padding-left: 0;
 }
 .lt_main .breadcrumb {
     margin-top: 20px;
@@ -107,6 +118,10 @@ ul {
     height: 50px;
     background-color: #3C8DBC;
     padding-left: 180px;
+    transition: all 1s;
+}
+.lt_main .lt_topbar.hidemenu {
+    padding-left: 0;
 }
 .lt_main .lt_topbar a {
     width: 50px;

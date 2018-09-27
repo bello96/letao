@@ -24,3 +24,30 @@ $(document).ajaxStop(function(){
     //关闭进度条
     NProgress.done();
 })
+
+
+//首页的公共效果
+//1.二级菜单切换效果
+//2.左侧菜单导航切换
+//3.退出功能
+
+$(function(){
+    //1.二级菜单切换效果 
+    $(".lt_aside .category").click(function(){
+        $(".lt_aside .child").stop().slideToggle();
+    })
+
+    //2.左侧菜单栏切换
+    $(".icon_menu").click(function(){
+        //点击的时候让左侧边栏的left为负值到浏览器外,右侧的上面和下面让padding-left值为0就可以了,然后加上动画,就可以实现这个功能
+        $(".lt_aside").toggleClass("hidemenu");
+        $(".lt_main").toggleClass("hidemenu");
+        $(".lt_main .lt_topbar").toggleClass("hidemenu");
+    })
+
+    //3.右侧退出功能,显示,模态框
+    $(".icon_logout").click(function(){
+        //点击的时候弹出模态框
+        $("#logoutModal").modal("show");
+    })
+})
