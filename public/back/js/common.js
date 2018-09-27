@@ -50,4 +50,24 @@ $(function(){
         //点击的时候弹出模态框
         $("#logoutModal").modal("show");
     })
+
+    //4.弹出模态框,点击退出登录
+    $("#logoutBtn").click(function(){
+        //退出功能,应该调用后台提供的接口,在服务器端销毁该用户登录的状态
+        //location.href = "login.html" 这种是直接跳转 并没有退出
+        $.ajax({
+            url:"/employee/employeeLogout",
+            type:"get",
+            dataType:"json",
+            success:function(info){
+                // console.log(info);
+                if(info.success) {
+                    //退出成功,跳转到登录页
+                    location.href = "login.html"
+                }
+            }
+        })
+    })
+
+    
 })
