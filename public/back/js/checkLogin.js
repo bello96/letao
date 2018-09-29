@@ -17,7 +17,7 @@
             }
             if(info.success ){
                 //已登录,用户继续访问即可
-                console.log("当前用户已登录");
+                // console.log("当前用户已登录");
             }
         }
     })

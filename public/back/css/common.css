@@ -23,6 +23,11 @@ ul {
 .red {
     color: #A94442;
 }
+.mb_20 {
+    margin-bottom: 20px;
+}
+
+
 
 /* 后台管理系统头部样式 */
 .panel .panel-title {
