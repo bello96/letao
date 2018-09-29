@@ -38,4 +38,10 @@ $(function(){
             }
         });
     }  
+
+
+    //点击添加按钮显示模态框
+    $("#addBtn").click(function(){
+        $("#addModal").modal("show");
+    })
 })
