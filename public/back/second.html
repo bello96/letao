@@ -115,8 +115,11 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">加倍生活馆</a></li>                             
-                                </ul>
+                                </ul>                          
                             </div>
+                            <input type="hidden" name="categoryId">
+                            <!-- 火热的品牌 -->
+                            <input type="hidden" name="hot" value="1">
                         </div>
                         <div class="form-group">
                             <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
@@ -130,6 +133,7 @@
                         </div>
                         <div class="form-group" id="imgBox">
                             <img src="./images/none.png" width="100" height="100" alt="">
+                            <input type="hidden" name="brandLogo">
                         </div>
                     </div>
 
@@ -181,7 +185,7 @@
     <!--准备模板 添加分类里面的一级分类下拉列表的模板引擎 -->
     <script type="text/html" id="tmp2">
         {{ each rows v i }}
-            <li><a href="#">{{ v.categoryName }}</a></li>
+            <li><a data-id="{{ v.id }}" href="#">{{ v.categoryName }}</a></li>
         {{ /each }}
     </script>
 
