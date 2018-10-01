@@ -15,6 +15,13 @@
 .mt_150 {
   margin-top: 150px;
 }
+.mb_20 {
+  margin-bottom: 20px;
+}
+tr th,
+tr td {
+  text-align: center;
+}
 .red {
   color: #A94442;
 }
