@@ -122,13 +122,13 @@
                                     </ul>                          
                                 </div>
                                 <input type="hidden" name="brandId">
-                                
+                                <input type="hidden" name="statu" value="1">
                             </div>
                             <div class="form-group">
                                 <input type="text" name="proName" class="form-control" placeholder="请输入商品名称">
                             </div>
                             <div class="form-group">
-                               <textarea name="proName" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
+                               <textarea name="proDesc" class="form-control" rows="3" placeholder="请输入商品描述"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="num" class="form-control" placeholder="请输入商品库存">
@@ -142,13 +142,18 @@
                             <div class="form-group">
                                 <input type="text" name="price" class="form-control" placeholder="请输入商品现价">
                             </div>
+
                             <div class="form-group">
                                 <label for="fileupload" class="btn btn-default">上传图片</label>
-                                <input id="fileupload" type="file" name="pic1" data-url="/product/addProductPic" style="display: none" multiple>
-                                <div class="imgBox">
-                                    <!-- <img src="./images/none.png" width="100" height="100" alt=""> -->
-                                </div>
+                                <input style="display: none;" type="file" id="fileupload" name="pic1" data-url="/product/addProductPic" multiple>
+                               
                             </div>
+
+                            <div class="form-group" id="imgBox">
+                                <!-- <img src="./images/none.png" width="100" height="100" alt=""> -->
+                                <input type="hidden" name="picStatus">
+                            </div>
+
                         </div>
     
 
