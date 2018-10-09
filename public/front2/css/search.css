@@ -29,7 +29,7 @@
 .content li {
     border: 1px dashed red;
     border-bottom: none;
-    padding: 0 5px;
+    padding: 0 8px;
     height: 30px;
     line-height: 30px;
 }
