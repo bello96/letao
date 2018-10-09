@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="./favicon.ico">
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/category.css">
 </head>
 <body>
     <div class="lt_container">
@@ -20,7 +21,37 @@
         </div>
 
         <!-- 主体 -->
-        <div class="lt_main">分类页</div>
+        <div class="lt_main">
+            <div class="lt_category_left">
+
+                <!-- 区域滚动左侧 -->
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容-->
+                        <ul>
+                            <!-- <li><a href="#">运动馆</a></li> -->
+                            <!-- 挖个坑 -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="lt_category_right">
+
+                <!-- 区域滚动右侧 -->
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容-->
+                        <ul class="mui-clearfix">
+                           
+                           <!-- 挖坑 -->
+                        
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- 底部 -->
         <div class="lt_footer">
@@ -53,7 +84,33 @@
         </div>
     </div>
 
-    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 准备左边的模板 -->
+    <script type="text/html" id="tmp">
+        {{ each rows v i }}
+            <li><a href="#" class="{{ i === 0 ? 'current' : '' }}" data-id="{{ v.id }}">{{ v.categoryName }}</a></li>
+        {{ /each }}
+    </script>
+
+    <!-- 右边的模板 -->
+    <script type="text/html" id="tmp2">
+        {{ if rows.length === 0 }}
+            <p class="tips">没有更多分类信息了</p>
+        {{ /if }}
     
+        {{ each rows v i }}
+            <li>
+                <a href="#">
+                    <img src="{{ v.brandLogo }}" alt="">
+                    <p>{{ v.brandName }}</p>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/category.js"></script>
 </body>
 </html>
