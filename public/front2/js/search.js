@@ -58,6 +58,51 @@ $(function(){
     })
 
 
+//功能4 添加历史记录
+    //(1) 给搜索按钮添加添加事件
+    //(2) 获取输入框的内容,添加到数组的最前面
+    //(3) 将修改后的数组存储带本地中
+    //(4) 重新渲染页面
+    $(".search_btn").click(function(){
+        //获取搜索框的内容
+        var key = $(".lt_search .search_input").val().trim();
+        // console.log(key)
+        //非空判断
+        if(key == ""){
+            mui.toast("请输入搜索内容");
+            return;
+        }
+
+        //经搜素框中的内容添加到数组的左前面
+        var arr = getHistory();
+
+        //需求:
+            //1.如果有重复项,删除先添加的那一个
+            //2.如果长度超过10,删除最后一个(最早添加的那一项)
+            var index = arr.indexOf(key);
+            if(index != -1){
+                //有重复项
+                arr.splice(index,1);
+            }
+
+            //长度不能超过10
+            if(arr.length >= 10) {
+                //删除最后一项
+                arr.pop();
+            }
+
+
+        arr.unshift(key);
+        //将添加过的数组转成json字符串存储到本地中
+        localStorage.setItem( "search_list", JSON.stringify( arr ) );
+        //页面刷新
+        render();
+        //清空搜索框
+        $(".lt_search .search_input").val("");
+    })
+
+
+
 
 
 
