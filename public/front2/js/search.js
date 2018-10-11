@@ -99,6 +99,9 @@ $(function(){
         render();
         //清空搜索框
         $(".lt_search .search_input").val("");
+
+        //跳转到商品列表页
+        location.href = "searchList.html?key=" + key;
     })
 
 
